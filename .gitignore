@@ -5,3 +5,4 @@
 *.class
 .hg/
 .idea
+*.iml
