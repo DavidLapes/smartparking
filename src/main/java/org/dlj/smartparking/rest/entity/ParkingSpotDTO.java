@@ -12,4 +12,5 @@ public class ParkingSpotDTO {
     private Double latitude;
     private Double longitude;
     private Boolean available;
+    private SensorDTO sensor;
 }
