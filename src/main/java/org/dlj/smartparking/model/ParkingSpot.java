@@ -22,6 +22,9 @@ import javax.validation.constraints.NotNull;
         })
 public class ParkingSpot {
 
+    //TODO audit logging
+    //TODO add metrics
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
