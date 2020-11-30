@@ -1,9 +1,9 @@
 package org.dlj.smartparking.rest.controller;
 
-import org.dlj.smartparking.mapper.ParkingSpotMapper;
+import org.dlj.smartparking.mapper.SensorParkingSpotMapper;
 import org.dlj.smartparking.rest.entity.ParkingSpotDTO;
-import org.dlj.smartparking.rest.entity.ParkingSpotSensorDTO;
 import org.dlj.smartparking.rest.entity.ResponseEntity;
+import org.dlj.smartparking.rest.entity.SensorParkingSpotDTO;
 import org.dlj.smartparking.rest.service.ParkingSpotService;
 import org.dlj.smartparking.rest.service.SensorService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,8 @@ public class SensorController {
 
     private final ParkingSpotService parkingSpotService;
     private final SensorService sensorService;
-    private static final ParkingSpotMapper MAPPER = ParkingSpotMapper.getInstance();
+
+    private static final SensorParkingSpotMapper MAPPER = SensorParkingSpotMapper.getInstance();
 
     @Autowired
     public SensorController(
@@ -30,7 +31,7 @@ public class SensorController {
     }
 
     @PostMapping("/update-availability")
-    public ResponseEntity<ParkingSpotDTO> updateAvailability(@RequestBody ParkingSpotSensorDTO sensor) {
+    public ResponseEntity<ParkingSpotDTO> updateAvailability(@RequestBody SensorParkingSpotDTO sensor) {
         sensorService.authenticate(sensor);
         final ParkingSpotDTO parkingSpot = MAPPER.map(sensor);
         final ParkingSpotDTO updatedSpot = parkingSpotService.updateAvailability(parkingSpot);

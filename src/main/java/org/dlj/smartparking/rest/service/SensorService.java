@@ -1,8 +1,8 @@
 package org.dlj.smartparking.rest.service;
 
-import org.dlj.smartparking.rest.entity.ParkingSpotSensorDTO;
+import org.dlj.smartparking.rest.entity.SensorParkingSpotDTO;
 
 public interface SensorService {
 
-    void authenticate(ParkingSpotSensorDTO sensor);
+    void authenticate(SensorParkingSpotDTO sensor);
 }

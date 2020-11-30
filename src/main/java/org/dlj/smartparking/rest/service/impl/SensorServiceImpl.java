@@ -1,7 +1,7 @@
 package org.dlj.smartparking.rest.service.impl;
 
 import org.dlj.smartparking.repository.SensorRepository;
-import org.dlj.smartparking.rest.entity.ParkingSpotSensorDTO;
+import org.dlj.smartparking.rest.entity.SensorParkingSpotDTO;
 import org.dlj.smartparking.rest.service.SensorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,10 +17,7 @@ public class SensorServiceImpl implements SensorService {
     }
 
     @Override
-    public void authenticate(final ParkingSpotSensorDTO sensor) {
-        repository.findByCredentials(sensor.getUuid(), sensor.getPassword());
-        if(sensor == null) {
-            System.out.println("Hello!");
-        }
+    public void authenticate(final SensorParkingSpotDTO sensor) {
+        repository.findByCredentials(sensor.getSensorUuid(), sensor.getPassword());
     }
 }

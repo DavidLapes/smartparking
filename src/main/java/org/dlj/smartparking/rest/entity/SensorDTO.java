@@ -9,7 +9,7 @@ import java.util.List;
 @Setter
 public class SensorDTO {
 
-    private String id;
+    private Long id;
     private String uuid;
     private String password;
     private SensorTypeDTO type;
