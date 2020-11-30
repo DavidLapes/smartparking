@@ -1,1 +1,1 @@
-# smartparking
+#Smartparking core repository
